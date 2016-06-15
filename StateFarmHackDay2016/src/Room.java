@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Rooms extends Floor {
+public class Room extends Floor {
 
 	
 	String roomName;
@@ -11,7 +11,7 @@ public class Rooms extends Floor {
 	ArrayList<String> allTimes;
 	
 	
-	Rooms(String name, String campus, String floorNumber, String divisions, String roomName, ArrayList<String> taken, int width, 
+	Room(String name, String campus, int floorNumber, String divisions, String roomName, ArrayList<String> taken, int width, 
 			int length, int locationX, int locationY) 
 	{
 		super(name, campus, floorNumber, divisions);
@@ -29,11 +29,11 @@ public class Rooms extends Floor {
 		}};
 	}
 
-	String getRoomName()
+	public String getRoomName()
 	{
 		return roomName;
 	}
-	ArrayList<String> getAvailability()
+	public ArrayList<String> getAvailability()
 	{
 		ArrayList<String> availability = (ArrayList<String>)allTimes.clone();
 		for(String x: taken) {
@@ -41,7 +41,8 @@ public class Rooms extends Floor {
 		}
 		return availability;
 	}
-	boolean isAvailble(String time) {
+	
+	public boolean isAvailble(String time) {
 		ArrayList<String> availability = getAvailability();
 		if(availability.contains(time))
 			isAvailable = true;
@@ -50,4 +51,14 @@ public class Rooms extends Floor {
 		return isAvailable;
 	}
 	
+	public boolean takeAvailability(String time) {
+		if(isAvailble(time)) {
+			taken.add(time);
+			return true;
+		}
+		else {
+			System.out.println("Time is already occupied");
+			return false;
+		}
+	}
 }

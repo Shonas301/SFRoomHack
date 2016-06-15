@@ -1,18 +1,19 @@
+import java.util.ArrayList;
 
 public class Floor extends Building{
 
-	String floorNumber;
+	int floorNumber;
 	String divisions;
+	ArrayList<Room> rooms;
 	
-	
-	
-	Floor(String name, String campus, String floorNumber, String divisions) {
+	Floor(String name, String campus, int floorNumber, String divisions) {
 		super(name, campus);
 		this.floorNumber = floorNumber;
 		this.divisions = divisions;
+		this.rooms = new ArrayList<Room>();
 		// TODO Auto-generated constructor stub
 	}
-	protected String getFloor()
+	protected int getFloor()
 	{
 		return floorNumber;
 	}
@@ -21,5 +22,10 @@ public class Floor extends Building{
 	{
 		return divisions;
 	}
-	
+	public void addRoom(Room r) {
+		rooms.add(r);
+	}
+	public ArrayList<Room> getRooms() {
+		return rooms;
+	}
 }
