@@ -43,10 +43,5 @@ public class Build_Control {
 						Building.setValue(newS);
 			}
 		});
-		
-	}
-	public void convertButtonListener()
-	{
-	
 	}
 }
