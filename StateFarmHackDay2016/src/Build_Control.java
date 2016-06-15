@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -35,6 +37,14 @@ public class Build_Control {
 		//Sets the combo box with its items
 		Building.setValue("A");
 		Building.setItems(buildingBox);
+		Building.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override public void changed(ObservableValue<? extends String> ov,
+					final String old, final String newS) {
+						if(old != null) {
+							
+						}
+			}
+		});
 		
 	}
 	public void convertButtonListener()
