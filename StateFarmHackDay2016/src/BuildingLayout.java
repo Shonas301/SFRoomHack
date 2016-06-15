@@ -14,22 +14,21 @@ public class BuildingLayout extends Application	{
 		Parent parent = FXMLLoader.load(getClass().getResource("BuildingLayout.fxml"));
 		Scene scene = new Scene(parent);
 		final ComboBox<String> buildingBox = new ComboBox<>();
-		/*buildingBox.getItems().addAll(
+		buildingBox.getItems().addAll(
 				"A", "B", "C");
 		buildingBox.setPromptText("Building");
-		buildingBox.setEditable(true);*/
-		/*buildingBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+		buildingBox.setEditable(true);
+		buildingBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			public void changed(ObservableValue<? extends String> ov,
 					final String old, final String newS) {
 						
 			}
-		});*/
+		});
 		stage.setTitle("Meeting Mapper");
 		stage.setScene(scene);
 		stage.show();
 	}
 	public static void main(String[] args) {
-		
 		launch(args);
 	}
 
