@@ -10,11 +10,11 @@ public class Building {
 		this.campus = campus;
 	}
 	
-	protected String getBuildingName()
+	public String getBuildingName()
 	{
 		return name;
 	}
-	protected String getBuildingCampus()
+	public String getBuildingCampus()
 	{
 		return campus;
 	}

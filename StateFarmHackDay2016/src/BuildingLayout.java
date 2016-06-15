@@ -10,7 +10,7 @@ public class BuildingLayout extends Application	{
 	ComboBox<String> buildingBox;
 	public void start(Stage stage) throws Exception
 	{
-		Parent parent = FXMLLoader.load(getClass().getResource("Kilo.fxml"));
+		Parent parent = FXMLLoader.load(getClass().getResource("BuildingLayout.fxml"));
 		Scene scene = new Scene(parent);
 		buildingBox = new ComboBox<>();
 		buildingBox.getItems().addAll(
