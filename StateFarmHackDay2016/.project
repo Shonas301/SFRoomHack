@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/FloorPlanModel.png</name>
+			<type>1</type>
+			<location>/Users/SeanCassin/Desktop/FloorPlanModel.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>
