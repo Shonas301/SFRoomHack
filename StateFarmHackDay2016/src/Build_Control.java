@@ -40,9 +40,7 @@ public class Build_Control {
 		Building.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override public void changed(ObservableValue<? extends String> ov,
 					final String old, final String newS) {
-						if(old != null) {
-							
-						}
+						Building.setValue(newS);
 			}
 		});
 		
