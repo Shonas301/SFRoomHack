@@ -9,6 +9,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ComboBox;
@@ -42,7 +43,7 @@ public class Build_Control {
 	public void initialize()
 	{
 		//Sets the combo box with its items
-		Building.setValue("A");
+		Building.setValue("Select Building");
 		Building.setItems(buildingBox);
 		Building.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override public void changed(ObservableValue<? extends String> ov,
@@ -52,23 +53,13 @@ public class Build_Control {
 		});
 		BufferedImage img = null;
 		try {
-		    File file = new File("/StateFarmHackDay2016/src/FloorPlanModel.png");
+		    File file = new File("C:\\Users\\jdivi_000\\Downloads\\13467808_4410173449549_1016923583_o.png");
 		    img = ImageIO.read(file);
 		} catch (IOException e) {
 		}
 		
-		WritableImage wr = null;
-        if (img != null) {
-            wr = new WritableImage(img.getWidth(), img.getHeight());
-            PixelWriter pw = wr.getPixelWriter();
-            for (int x = 0; x < img.getWidth(); x++) {
-                for (int y = 0; y < img.getHeight(); y++) {
-                    pw.setArgb(x, y, img.getRGB(x, y));
-                }
-            }
-        }
+		Image image = SwingFXUtils.toFXImage(img, null);
  
-        ImageView imView = new ImageView(wr);
-        MapView = imView;
+        MapView.setImage(image);
 	}
 }
